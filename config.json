@@ -1,0 +1,9 @@
+
+{
+    "timeout": 1000,
+    "host": "0.0.0.0",
+    "port": 53,
+    "upper_dns": "8.8.8.8",
+    "blacklist": ["dou.ua","ukr.net"],
+    "answer": "Not Resolved"
+}
