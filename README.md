@@ -17,5 +17,6 @@
 # example 2
    
    ` Run sudo python3 proxy_server_dns.py &`
+   
    ` nslookup yoursite 127.0.0.1 `
    
