@@ -1,6 +1,6 @@
  using [dnslib](https://pypi.python.org/pypi/dnslib) library
 
-# dns proxyserver in python
+# example
 
 'On remote VM:'
 
