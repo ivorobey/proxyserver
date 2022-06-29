@@ -4,9 +4,9 @@ Python DNS proxy server with blacklist support using [dnslib](https://pypi.pytho
 
 'On remote VM:'
 
-   1) docker build -t somename .
+    1) docker build -t somename .
    
-   2) docker run --name somename -d --network host somename
+    2) docker run --name somename -d --network host somename
 
 'On your linux:'
 
