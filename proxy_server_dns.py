@@ -3,9 +3,9 @@
 import json
 import time
 
-from dnslib import RR, A
-from dnslib.proxy import ProxyResolver
-from dnslib.server import DNSServer
+from dnslib import RR, A # https://github.com/paulc/dnslib/blob/master/dnslib/dns.py
+from dnslib.proxy import ProxyResolver # https://github.com/paulc/dnslib/blob/master/dnslib/proxy.py
+from dnslib.server import DNSServer # https://github.com/paulc/dnslib/blob/master/dnslib/server.py
 
 
 class MyProxResolv(ProxyResolver):
