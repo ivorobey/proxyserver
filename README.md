@@ -2,11 +2,11 @@ Python DNS proxy server with blacklist support using [dnslib](https://pypi.pytho
 
 # dns proxyserver in python
 
-1)On remote VM:
+'On remote VM:'
 
-  1)docker build -t somename .
+  1) docker build -t somename .
    
-  2)docker run --name somename -d --network host somename
+  2) docker run --name somename -d --network host somename
 
 2)On your linux:
    1)change default nameserver in the /etc/resolv.conf to ip your remote VM (nameserver {ip vm})
