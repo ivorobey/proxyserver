@@ -10,6 +10,6 @@ Python DNS proxy server with blacklist support using [dnslib](https://pypi.pytho
 
 'On your linux:'
 
-   1)change default nameserver in the /etc/resolv.conf to ip your remote VM (nameserver {ip vm})
+    1)change default nameserver in the /etc/resolv.conf to ip your remote VM (nameserver {ip vm})
    
-   2)nslookup yoursite
+    2)nslookup yoursite
