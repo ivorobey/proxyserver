@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 import json
+import time
 
 from dnslib import RR, A
 from dnslib.proxy import ProxyResolver
@@ -15,6 +18,7 @@ class MyProxResolv(ProxyResolver):
         self.host = host
 
     def resolve(self, request, handler):
+        print(request.q.qname)
         if request.q.qname in self.blacklist:
             answer = RR(rdata=A(self.host))
             answer.set_rname(self.answer)
@@ -25,25 +29,27 @@ class MyProxResolv(ProxyResolver):
             return ProxyResolver.resolve(self, request, handler)
 
 
-if __name__ == '__main__':
-    import time
 
-    config_file = open('config.json')
-    config = json.load(config_file)
-    config_file.close()
-
-    resolver = MyProxResolv(address=config['upper_dns'],
-                            port=config['port'],
-                            timeout=config['timeout'],
-                            blacklist=config['blacklist'],
-                            answer=config['answer'],
-                            host=config['host'])
- 
-    server = DNSServer(resolver,
-                       port=config['port'],
-                       address=config['host'])
     
+def main():
+    with open("config.json") as conf_file:
+        conf = json.load(conf_file)
+
+    resolver = MyProxResolv(
+        address=conf["upper_dns"],
+        port=conf["port"],
+        timeout=conf["timeout"],
+        blacklist=conf["blacklist"],
+        answer=conf["answer"],
+        host=conf["host"],
+    )
+
+    server = DNSServer(resolver, port=conf["port"], address=conf["host"])
     server.start_thread()
 
     while server.isAlive():
         time.sleep(1)
+
+
+if __name__ == "__main__":
+    main()
