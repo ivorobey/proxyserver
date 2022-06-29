@@ -1,4 +1,4 @@
-Python DNS proxy server with blacklist support using [dnslib](https://pypi.python.org/pypi/dnslib) library
+DNS-proxy-server with blacklist using [dnslib](https://pypi.python.org/pypi/dnslib) library
 
 # dns proxyserver in python
 
